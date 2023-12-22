@@ -97,7 +97,7 @@ header {
 }
 
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .contenedor {
         grid-template-areas: 
             "header header"
@@ -118,13 +118,67 @@ header {
 
     .taskList {
         width: 71px;
+        display: grid;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
     }
     .contenedor .contenedorDere {
         display: grid;
-        justify-content: end;
-        align-items: end;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        
     }
 
+    .contenedorDere .textoTareas {
+        
+    }
+
+    .taskList {
+        display: flex;
+        order: 2;
+    }
+
+} */
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        grid-template-areas: 
+            "header header"
+            "contenedorIzq contenedorIzq"
+            "contenedorDere contenedorDere"
+            "footer footer";
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .contenedor .header {
+        display: flex;
+        justify-content: end;
+    }
+
+    .contenedor .contenedorIzq {
+        width: 100%;
+    }
+
+    .contenedorDere {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .taskList {
+        display: flex;
+        order: 2;
+        margin-top: 20px;
+    }
+
+    .contenedorDere .texto {
+        text-align: center;
+        margin-top: 20px;
+    }
 }
+
+
 
 
