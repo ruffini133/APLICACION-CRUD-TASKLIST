@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E9ECF4;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(184deg, #A344C5 3.3%, rgba(174, 20, 228, 0.26) 113.52%);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+
+    grid-template-areas: "header            header"
+                         "contenedorIzq     contenedorDere"
+                         "vacio             contenedorDere"
+                         "footer            footer";
+}
+
+.contenedor div, footer {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contenedor .header {
+    display: flex;
+    gap: 50%;
+    text-align: center;
+    grid-area: header;
+}
+
+.contenedorIzq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 314px;
+    background-image: url(images/minions.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.contenedor .contenedorIzq {
+    grid-area: contenedorIzq;
+}
+.contenedor .contenedorDere {
+    height: 500px;
+    background-image: url(images/tareas\ fondo.svg);
+    grid-area: contenedorDere;
+
+}
+.contenedorDere .taskList {
+    margin-top: 225px;
+    margin-left: 200px;
+    
+}
+
+.contenedor .footer {
+    max-width: 100%;
+    margin-top: -40px;
+    height: 194px;
+    grid-area: footer;
+    background-image: url(images/footer.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.input {
+    margin-top: -60px;
+}
+
+.texto {
+    text-align: center;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: linear-gradient(88deg, #D62020 28.39%, rgba(164, 58, 201, 0.42) 95.57%);
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        grid-template-areas: "header            header"
+                             "contenedorIzq     contenedorIzq"
+                             "contenedorDere    contenedorDere"
+                             "footer            footer";
+    }
+
+    .taskList {
+        margin-left: 90%;
+    }
+}
