@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+button {
+    color: white;
+    border-radius: 10px;
+    margin-left: 15px;
+    background: purple;
+}
+
 body {
     background-color: #E9ECF4;
     color: #000;
@@ -96,50 +103,39 @@ header {
     background: linear-gradient(88deg, #D62020 28.39%, rgba(164, 58, 201, 0.42) 95.57%);
 }
 
+.contenedorDere {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "tareas tareas tareas"
+                         "parrafos parrafos vacio"
+                         "parrafos parrafos imagenTask";
+}
 
-/* @media screen and (max-width: 768px) {
-    .contenedor {
-        grid-template-areas: 
-            "header header"
-            "contenedorIzq contenedorIzq"
-            "contenedorDere contenedorDere"
-            "footer footer";
-        grid-template-columns: 1fr 1fr; 
-    }
+.contenedorDere .tareas {
+    grid-area: tareas;
+}
 
-    .contenedor .header {
-        display: flex;
-        justify-content: end;
-    }
+.contenedorDere .parrafos {
+    grid-area: parrafos;
+}
 
-    .contenedor .contenedorIzq {
-        width: 100%;
-    }
+.contenedorDere .imagenTask {
+    grid-area: imagenTask;
+    /* margin-top: 90px; */
+    display: grid;
+    justify-content: start;
+    text-align: end;
+    align-items: end;
+}
 
-    .taskList {
-        width: 71px;
-        display: grid;
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-    }
-    .contenedor .contenedorDere {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-        
-    }
-
-    .contenedorDere .textoTareas {
-        
-    }
-
-    .taskList {
-        display: flex;
-        order: 2;
-    }
-
-} */
+.contenedorDere .imagenTask img {
+    width: 150%;
+    margin-top: 215px;
+    margin-left: -20px;
+    display: flex;
+    justify-content: start;
+}
 
 @media screen and (max-width: 768px) {
     .contenedor {
@@ -154,6 +150,14 @@ header {
     .contenedor .header {
         display: flex;
         justify-content: end;
+    }
+
+    .parrafos {
+        height: 500px;
+    }
+
+    .tareas {
+        border-radius: 2px solid red;
     }
 
     .contenedor .contenedorIzq {
@@ -173,12 +177,31 @@ header {
         margin-top: 20px;
     }
 
+    .contenedorDere .imagenTask img {
+        width: 190px;
+        margin-top: 120px;
+        margin-left: 200px;
+        display: flex;
+        justify-content: start;
+    }
+
+    
+
     .contenedorDere .texto {
         text-align: center;
         margin-top: 20px;
     }
+
+    .contenedorDere {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: "parrafos parrafos tareas"
+                             "parrafos parrafos imagenTask"
+                             "parrafos parrafos imagenTask";
+    }
+
+    .contenedorDere .parrafos {
+        margin-left: 50px;
+    }
 }
-
-
-
-
